@@ -3,102 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Photo Gallery with Expandable Images</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <title>AI Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1>My AI Photo Gallery</h1>
-    <p class="subtitle">Click on any image to view it in full size</p>
   </header>
-  
-  <div class="instructions">
-    <i class="fas fa-mouse-pointer"></i> Click on any image to expand it | 
-    <i class="fas fa-times-circle"></i> Click outside or close button to exit
-  </div>
 
   <main class="gallery">
     <figure>
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="At the Beach">
-      <figcaption>Beach Paradise</figcaption>
+      <img src="photos/Photo1.png" alt="At the Beach..">
+      <figcaption>Artwork 1</figcaption>
     </figure>
     <figure>
-      <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Drinking in Paradise">
-      <figcaption>Tropical Drink</figcaption>
+      <img src="photos/Photo2.jpeg" alt="Drinking in Paradise">
+      <figcaption>Artwork 2</figcaption>
     </figure>
-    <figure>
-      <img src="https://images.unsplash.com/photo-1614314107768-8cb6f6e07062?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Beers!!!">
-      <figcaption>Cold Beers</figcaption>
+        <figure>
+      <img src="photos/Photo3.jpeg" alt="Beers!!!">
+      <figcaption>Artwork 2</figcaption>
     </figure>
-    <figure>
-      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Mountain Sunset">
-      <figcaption>Mountain Sunset</figcaption>
+        <figure>
+      <img src="photos/Photo4.jpeg" alt="4WD Sunset">
+      <figcaption>Artwork 2</figcaption>
     </figure>
-    <figure>
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Snowy Mountain">
-      <figcaption>Snowy Peaks</figcaption>
+        <figure>
+      <img src="photos/Photo5.jpeg" alt="4WD Sunset - Original">
+      <figcaption>Artwork 2</figcaption>
     </figure>
-    <figure>
-      <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Relaxing">
-      <figcaption>Relaxation Time</figcaption>
+        <figure>
+      <img src="photos/Photo6.jpeg" alt="Relaxing">
+      <figcaption>Artwork 2</figcaption>
     </figure>
+         <!-- Add more images here -->
   </main>
 
-  <!-- Modal for expanded image -->
-  <div class="modal" id="imageModal">
-    <button class="close-btn">&times;</button>
-    <img class="modal-content" id="expandedImage" alt="Expanded Image">
-    <div class="image-info" id="imageCaption"></div>
-  </div>
-
   <footer>
-    <p>© 2023 My AI Gallery | Click on photos to view them in full size</p>
+    <p>© 2025 My AI Gallery</p>
   </footer>
-
-  <script>
-    // Get the modal and its components
-    const modal = document.getElementById('imageModal');
-    const expandedImg = document.getElementById('expandedImage');
-    const captionText = document.getElementById('imageCaption');
-    const closeBtn = document.querySelector('.close-btn');
-    
-    // Get all gallery images
-    const galleryImages = document.querySelectorAll('.gallery img');
-    
-    // Add click event to each image
-    galleryImages.forEach(img => {
-      img.addEventListener('click', function() {
-        // Show the modal
-        modal.classList.add('active');
-        
-        // Set the expanded image source and alt text
-        expandedImg.src = this.src;
-        expandedImg.alt = this.alt;
-        
-        // Set the caption text
-        captionText.textContent = this.alt;
-      });
-    });
-    
-    // Close modal when clicking on close button
-    closeBtn.addEventListener('click', function() {
-      modal.classList.remove('active');
-    });
-    
-    // Close modal when clicking outside the image
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 </html>
